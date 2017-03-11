@@ -1,0 +1,12 @@
+4
+mumbai
+delhi
+chennai
+kolkatta
+mumbai delhi
+mumbai chennai
+mumbai kolkatta
+delhi mumbai
+delhi kolkatta
+chennai kolkatta
+kolkatta delhi

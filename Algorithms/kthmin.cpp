@@ -1,10 +1,4 @@
-//============================================================================
-// Name        : kthmin.cpp
-// Author      : vru
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
+
 #include <iostream>
 using namespace std;
 int kthmin(int a[],int low ,int high,int k){

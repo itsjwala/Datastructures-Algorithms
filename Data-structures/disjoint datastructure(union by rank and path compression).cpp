@@ -27,14 +27,12 @@ void merge(int x, int y) {
 	//if dont belong to same union merge
 	if (_x != _y) {
 
-		if (rank[_x] > rank[_y]) {
+		if (rank[_x] > rank[_y]) 
 			parent[_y] = _x;
-			rank[_x]++;
-		} else {
+		 else 
 			parent[_x] = _y;
-			rank[_y]++;
-		}
-
+		if(rank[_x] == rank[_y])
+                        rank[_y]++; 
 	}
 
 }

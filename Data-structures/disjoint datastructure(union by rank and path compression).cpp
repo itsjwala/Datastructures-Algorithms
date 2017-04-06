@@ -13,11 +13,17 @@ void init() {
 }
 //find parent of 'n' upto the root
 int find(int n) {
-	int x = n;
-	while (n != parent[n])
+	queue<int> q;
+	q.push(n);  //queue for 'n' and all its parent for path compression
+	while (n != parent[n]) {
 		n = parent[n];
+		q.push(n);
+	}
+	while (!q.empty()) {
+		parent[q.front()] = n;   //assign root as parent of all ancestors of 'n'
+		q.pop();
+	}
 
-	parent[x] = n; //union by path compression
 	return n;
 }
 void merge(int x, int y) {
@@ -27,12 +33,14 @@ void merge(int x, int y) {
 	//if dont belong to same union merge
 	if (_x != _y) {
 
-		if (rank[_x] > rank[_y]) 
+		if (rank[_x] > rank[_y]) {
 			parent[_y] = _x;
-		 else 
+			rank[_x]++;
+		} else {
 			parent[_x] = _y;
-		if(rank[_x] == rank[_y])
-                        rank[_y]++; 
+			rank[_y]++;
+		}
+
 	}
 
 }
@@ -45,7 +53,7 @@ int main() {
 	merge(3, 4);
 	merge(3, 7);
 	merge(7, 4);
-	//merge(7, 1);
+	merge(7, 1);
 	if (find(2) != find(3))
 		cout << "parents are different or different community";
 	else

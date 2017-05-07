@@ -49,7 +49,7 @@ void sumofsubset(int a[], int x[], int sum, int r, int n) {
 			}
 
 			else if (r + 1 < n)
-				sumofsubset(a, x, t, i + 1, n);
+				sumofsubset(a, x, t, i + 1, n);  //** i+1 //i is array index and r is current level 
 		}
 
 		x[i] = 0;  //undo to previous config

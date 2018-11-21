@@ -43,8 +43,7 @@ int main() {
         pq.push(ii(dist[v.first]+heu[v.first], v.first));
   } } }
 
-  for (int i = 0; i < V; i++)
-    printf("SSSP(%d, %d) = %d\n", s, i, dist[i]);
+ printf("shortest path from %d to % d  = %d",s,dest,dist[dest]);
 
   return 0;
 }

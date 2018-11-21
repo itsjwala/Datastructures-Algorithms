@@ -49,6 +49,7 @@ int main() {
 }
 
 /*
+admissible and inconsistent
 5 7 0 4
 0 1 1
 0 2 4
@@ -58,4 +59,34 @@ int main() {
 1 4 12
 3 4 3
 7 3 2 1 0
+
+admissible but inconsistent heuristic
+7 9 0 6
+0 1 2
+0 2 1
+0 6 9
+1 3 2
+1 4 3
+2 4 2
+2 5 4
+3 6 4
+4 6 4
+6 0 6 4 1 10 0
+
+admissible but inconsistent heuristic
+4 4 0 3
+0 1 1
+1 2 1
+0 2 3
+2 3 6
+8 7 0 0
+
+
+using inconsitent or Non monotonic heuristic will give sub optimal if we use visited array logic
+because some node from visited array may get updated which leads to optimal path,
+So conclusion dont use visited array if heuristic is inconsistent only issue would be visiting some nodes more than once (performance hit)
+If want to use visited array(like in dijktra's) then make sure heuristic is consitent/ monotonic.
+
+https://stackoverflow.com/a/51690332/9485283
+
 */
